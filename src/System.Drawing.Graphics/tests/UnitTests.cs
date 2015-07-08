@@ -24,7 +24,7 @@ public partial class GraphicsUnitTests
     {
         ////create an empty 10x10 image
         Image emptyTenSquare = Image.Create(10, 10);
-        ValidateImage(emptyTenSquare, 10, 10, PixelFormat.ARGB);
+        ValidateImage(emptyTenSquare, 10, 10, PixelFormat.Argb);
 
     }
 
@@ -85,7 +85,7 @@ public partial class GraphicsUnitTests
         string filepath = "";
         Image fromFile = Image.Load(filepath);
         //arbitraily passing in pixelformat.argb now and 0, 0
-        ValidateImage(fromFile, 0, 0, PixelFormat.ARGB);
+        ValidateImage(fromFile, 0, 0, PixelFormat.Argb);
     }
 
     //File I/O should be returning exceptions --> HOW TO DO THIS?!!?
@@ -126,7 +126,7 @@ public partial class GraphicsUnitTests
         Stream stream = null;
         Image fromStream = Image.Load(stream);
         //arbitraily passing in pixelformat.argb now and 0, 0
-        ValidateImage(fromStream, 0, 0, PixelFormat.ARGB);
+        ValidateImage(fromStream, 0, 0, PixelFormat.Argb);
     }
     [Fact]
     public void WhenCreatingAnImageFromAnInvalidStreamThenThrowException()
@@ -143,7 +143,7 @@ public partial class GraphicsUnitTests
         Image emptyResizeSquare = Image.Create(100, 100);
         emptyResizeSquare.Resize(10, 10);
         //arbitraily passing in pixelformat.argb now 
-        ValidateImage(emptyResizeSquare, 10, 10, PixelFormat.ARGB);
+        ValidateImage(emptyResizeSquare, 10, 10, PixelFormat.Argb);
     }
     [Fact]
     public void WhenResizingImageLoadedFromFileThenGiveAValidatedResizedImage()
@@ -152,7 +152,7 @@ public partial class GraphicsUnitTests
         Image fromFileResizeSquare = Image.Load(filepath);
         fromFileResizeSquare.Resize(10, 10);
         //arbitraily passing in pixelformat.argb now 
-        ValidateImage(fromFileResizeSquare, 10, 10, PixelFormat.ARGB);
+        ValidateImage(fromFileResizeSquare, 10, 10, PixelFormat.Argb);
     }
     [Fact]
     public void WhenResizingImageLoadedFromStreamThenGiveAValidatedResizedImage()
@@ -161,7 +161,7 @@ public partial class GraphicsUnitTests
         Image fromStreamResizeSquare = Image.Load(stream);
         fromStreamResizeSquare.Resize(10, 10);
         //arbitraily passing in pixelformat.argb now 
-        ValidateImage(fromStreamResizeSquare, 10, 10, PixelFormat.ARGB);
+        ValidateImage(fromStreamResizeSquare, 10, 10, PixelFormat.Argb);
     }
 
     /* Testing Resize parameters */

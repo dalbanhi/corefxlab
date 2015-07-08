@@ -12,9 +12,9 @@ namespace System.Drawing.Graphics
     //assuming only these three types for now (32 bit)
     public enum PixelFormat
     {
-        ARGB,
-        RGBA,
-        CMYK
+        Argb,
+        Rgba,
+        Cmyk
     }
 
     public class Image
@@ -23,7 +23,7 @@ namespace System.Drawing.Graphics
         private byte[] _data = null;
         private int _width = 0;
         private int _height = 0;
-        private PixelFormat _pixelFormat = PixelFormat.ARGB;
+        private PixelFormat _pixelFormat = PixelFormat.Argb;
         private int _bytesPerPixel = 0;
 
             /* Properties */
