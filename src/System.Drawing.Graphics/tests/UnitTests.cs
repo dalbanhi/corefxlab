@@ -10,7 +10,7 @@ using System.IO;
 
 public partial class GraphicsUnitTests
 {
-    [Fact]
+    [Fact(Skip ="no implemented yet..")]
     public static void TestForLibGDCalls()
     {
         System.Console.WriteLine("hi");
@@ -19,7 +19,7 @@ public partial class GraphicsUnitTests
 
     }
 
-    [Fact]
+    [Fact(Skip = "no implemented yet..")]
     public static void WhenCreatingAnEmptyImageThenValidateAnImage()
     {
         ////create an empty 10x10 image
@@ -43,43 +43,43 @@ public partial class GraphicsUnitTests
     }
 
     /* Tests Create Method */
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenCreatingABlankImageWithNegativeHeightThenThrowException()
     {
         Exception exception = Assert.Throws<InvalidOperationException>(() => Image.Create(1, -1));
         Assert.Equal("Parameters for creating an image must be positive integers.", exception.Message);
     }
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenCreatingABlankImageWithNegativeWidthThenThrowException()
     {
         Exception exception = Assert.Throws<InvalidOperationException>(() => Image.Create(-1, 1));
         Assert.Equal("Parameters for creating an image must be positive integers.", exception.Message);
     }
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenCreatingABlankImageWithNegativeSizesThenThrowException()
     {
         Exception exception = Assert.Throws<InvalidOperationException>(() => Image.Create(-1, -1));
         Assert.Equal("Parameters for creating an image must be positive integers.", exception.Message);
     }
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenCreatingABlankImageWithZeroHeightThenThrowException()
     {
         Exception exception = Assert.Throws<InvalidOperationException>(() => Image.Create(1, 0));
         Assert.Equal("Parameters for creating an image must be positive integers.", exception.Message);
     }
-    [Fact]
+    [Fact(Skip ="not implemented yet..")]
     public void WhenCreatingABlankImageWithZeroWidthThenThrowException()
     {
         Exception exception = Assert.Throws<InvalidOperationException>(() => Image.Create(0, 1));
         Assert.Equal("Parameters for creating an image must be positive integers.", exception.Message);
     }
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenCreatingABlankImageWithZeroParametersThenThrowException()
     {
         Exception exception = Assert.Throws<InvalidOperationException>(() => Image.Create(0, 0));
         Assert.Equal("Parameters for creating an image must be positive integers.", exception.Message);
     }
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenCreatingAnImageFromAValidFileGiveAValidImage()
     {
         string filepath = "";
@@ -93,7 +93,7 @@ public partial class GraphicsUnitTests
     //Path not found
     //Path not an image
     /* Tests Load(filepath) method */
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenCreatingAnImageFromAMalformedPathThenThrowException()
     {
         //place holder string to demonstrate what would be the error case
@@ -101,7 +101,7 @@ public partial class GraphicsUnitTests
         Exception exception = Assert.Throws<FileNotFoundException>(() => Image.Load(invalidFilepath));
         Assert.Equal("Malformed file path given", exception.Message);
     }
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenCreatingAnImageFromAnUnfoundPathThenThrowException()
     {
         //place holder string to demonstrate what would be the error case
@@ -109,7 +109,7 @@ public partial class GraphicsUnitTests
         Exception exception = Assert.Throws<FileNotFoundException>(() => Image.Load(invalidFilepath));
         Assert.Equal("Malformed file path given", exception.Message);
     }
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenCreatingAnImageFromAFileTypeThatIsNotAnImageThenThrowException()
     {
         //place holder string to demonstrate what would be the error case
@@ -119,7 +119,7 @@ public partial class GraphicsUnitTests
     }
 
     /* Tests Load(stream) mehtod*/
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenCreatingAnImageFromAValidStreamThenGiveValidImage()
     {
         //placeholder stream
@@ -128,7 +128,7 @@ public partial class GraphicsUnitTests
         //arbitraily passing in pixelformat.argb now and 0, 0
         ValidateImage(fromStream, 0, 0, PixelFormat.Argb);
     }
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenCreatingAnImageFromAnInvalidStreamThenThrowException()
     {
         Stream stream = null;
@@ -137,7 +137,7 @@ public partial class GraphicsUnitTests
     }
 
     /* Test Resize */
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenResizingEmptyImageThenGiveAValidatedResizedImage()
     {
         Image emptyResizeSquare = Image.Create(100, 100);
@@ -145,7 +145,7 @@ public partial class GraphicsUnitTests
         //arbitraily passing in pixelformat.argb now 
         ValidateImage(emptyResizeSquare, 10, 10, PixelFormat.Argb);
     }
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenResizingImageLoadedFromFileThenGiveAValidatedResizedImage()
     {
         string filepath = "";
@@ -154,7 +154,7 @@ public partial class GraphicsUnitTests
         //arbitraily passing in pixelformat.argb now 
         ValidateImage(fromFileResizeSquare, 10, 10, PixelFormat.Argb);
     }
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenResizingImageLoadedFromStreamThenGiveAValidatedResizedImage()
     {
         Stream stream = null;
@@ -165,7 +165,7 @@ public partial class GraphicsUnitTests
     }
 
     /* Testing Resize parameters */
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenResizingImageGivenNegativeHeightThenThrowException()
     {
         Image img = Image.Create(1, 1);
@@ -173,7 +173,7 @@ public partial class GraphicsUnitTests
         Exception exception = Assert.Throws<InvalidOperationException>(() => img.Resize(-1, 1));
         Assert.Equal("Parameters for resizing an image must be positive integers.", exception.Message);
     }
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenResizingImageGivenNegativeWidthThenThrowException()
     {
         Image img = Image.Create(1, 1);
@@ -181,7 +181,7 @@ public partial class GraphicsUnitTests
         Exception exception = Assert.Throws<InvalidOperationException>(() => img.Resize(1, -1));
         Assert.Equal("Parameters for resizing an image must be positive integers.", exception.Message);
     }
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenResizingImageGivenNegativeSizesThenThrowException()
     {
         Image img = Image.Create(1, 1);
@@ -189,7 +189,7 @@ public partial class GraphicsUnitTests
         Exception exception = Assert.Throws<InvalidOperationException>(() => img.Resize(-1, -1));
         Assert.Equal("Parameters for resizing an image must be positive integers.", exception.Message);
     }
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenResizingImageGivenZeroHeightThenThrowException()
     {
         Image img = Image.Create(1, 1);
@@ -197,7 +197,7 @@ public partial class GraphicsUnitTests
         Exception exception = Assert.Throws<InvalidOperationException>(() => img.Resize(0, 1));
         Assert.Equal("Parameters for resizing an image must be positive integers.", exception.Message);
     }
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenResizingImageGivenZeroWidthThenThrowException()
     {
         Image img = Image.Create(1, 1);
@@ -205,7 +205,7 @@ public partial class GraphicsUnitTests
         Exception exception = Assert.Throws<InvalidOperationException>(() => img.Resize(1, 0));
         Assert.Equal("Parameters for resizing an image must be positive integers.", exception.Message);
     }
-    [Fact]
+    [Fact(Skip = "not implemented yet..")]
     public void WhenResizingImageGivenZeroSizesThenThrowException()
     {
         Image img = Image.Create(1, 1);
